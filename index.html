@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapat Monitoring dan Evaluasi Pengelolaan Pengaduan — OPD Kabupaten Belitung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#122238;
+    --navy-900:#173252;
+    --navy-800:#204064;
+    --navy-700:#2c527d;
+    --paper:#f6f3ec;
+    --paper-card:#fffdf8;
+    --gold:#b8863f;
+    --gold-light:#d9ad6c;
+    --ink:#1c2733;
+    --ink-soft:#4c5866;
+    --line: rgba(23,50,82,0.14);
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(184,134,63,0.08), transparent 40%),
+      radial-gradient(circle at 88% 92%, rgba(23,50,82,0.06), transparent 45%);
+    color:var(--ink);
+    font-family:'Public Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:48px 20px;
+  }
+
+  .sheet{
+    width:100%;
+    max-width:640px;
+    background:var(--paper-card);
+    border:1px solid var(--line);
+    border-radius:2px;
+    box-shadow: 0 1px 2px rgba(23,50,82,0.04), 0 24px 48px -24px rgba(18,34,56,0.28);
+    overflow:hidden;
+    position:relative;
+  }
+
+  .sheet::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:6px;
+    background:linear-gradient(90deg, var(--navy-900) 0%, var(--navy-900) 70%, var(--gold) 70%, var(--gold) 100%);
+  }
+
+  .band{
+    padding:40px 48px 28px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .instansi{
+    font-size:13px;
+    letter-spacing:0.01em;
+    color:var(--ink-soft);
+    margin:0 0 18px;
+  }
+
+  .instansi strong{
+    color:var(--navy-900);
+    font-weight:600;
+  }
+
+  h1{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:29px;
+    line-height:1.32;
+    color:var(--navy-950);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  .body{
+    padding:32px 48px 44px;
+  }
+
+  .jadwal{
+    display:flex;
+    gap:20px;
+    padding:22px 24px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--gold);
+    border-radius:1px;
+  }
+
+  .jadwal-kolom{flex:1;}
+
+  .jadwal-label{
+    font-size:11.5px;
+    color:var(--ink-soft);
+    margin:0 0 6px;
+  }
+
+  .jadwal-nilai{
+    font-family:'Source Serif 4', serif;
+    font-size:18px;
+    font-weight:600;
+    color:var(--navy-950);
+    margin:0;
+  }
+
+  .jadwal-pemisah{
+    width:1px;
+    background:var(--line);
+  }
+
+  .tautan{
+    margin-top:32px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  a.aksi{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:17px 22px;
+    text-decoration:none;
+    border-radius:2px;
+    font-family:'Public Sans', sans-serif;
+    font-size:15px;
+    font-weight:600;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  a.aksi:hover{
+    transform: translateY(-1px);
+  }
+
+  a.aksi:focus-visible{
+    outline:2px solid var(--navy-800);
+    outline-offset:3px;
+  }
+
+  .aksi-utama{
+    background:var(--navy-900);
+    color:#fdfbf6;
+    box-shadow: 0 10px 22px -12px rgba(23,50,82,0.55);
+  }
+  .aksi-utama:hover{ background:var(--navy-800); }
+
+  .aksi-kedua{
+    background:transparent;
+    color:var(--navy-900);
+    border:1px solid var(--navy-900);
+  }
+  .aksi-kedua:hover{ background:rgba(23,50,82,0.05); }
+
+  .aksi-teks{ display:flex; flex-direction:column; gap:2px; }
+  .aksi-judul{ font-size:15px; }
+  .aksi-sub{ font-size:12.5px; font-weight:500; opacity:0.75; }
+
+  .aksi-panah{
+    font-size:17px;
+    flex-shrink:0;
+  }
+
+  .catatan{
+    margin-top:28px;
+    font-size:12.5px;
+    line-height:1.6;
+    color:var(--ink-soft);
+    border-top:1px solid var(--line);
+    padding-top:20px;
+  }
+
+  @media (max-width:520px){
+    .band, .body{ padding-left:26px; padding-right:26px; }
+    h1{ font-size:23px; }
+    .jadwal{ flex-direction:column; gap:14px; }
+    .jadwal-pemisah{ display:none; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    a.aksi{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+  <main class="sheet">
+    <div class="band">
+      <p class="instansi"><strong>Pemerintah Kabupaten Belitung</strong> — Undangan Rapat</p>
+      <h1>Rapat Monitoring dan Evaluasi Pengelolaan Pengaduan di Lingkup OPD Kabupaten Belitung</h1>
+    </div>
+
+    <div class="body">
+      <div class="jadwal">
+        <div class="jadwal-kolom">
+          <p class="jadwal-label">Tanggal</p>
+          <p class="jadwal-nilai">09 September 2026</p>
+        </div>
+        <div class="jadwal-pemisah"></div>
+        <div class="jadwal-kolom">
+          <p class="jadwal-label">Waktu</p>
+          <p class="jadwal-nilai">14.00 – 16.00 WIB</p>
+        </div>
+      </div>
+
+      <div class="tautan">
+        <a class="aksi aksi-utama" href="https://sirapat.belitung.go.id/rapat/daftarhadir/Jm0R0ybgxe" target="_blank" rel="noopener">
+          <span class="aksi-teks">
+            <span class="aksi-judul">Isi Daftar Hadir</span>
+            <span class="aksi-sub">sirapat.belitung.go.id</span>
+          </span>
+          <span class="aksi-panah">↗</span>
+        </a>
+
+        <a class="aksi aksi-kedua" href="https://sirapat.belitung.go.id/rapat/paparan/DUMMY-PAPARAN" target="_blank" rel="noopener">
+          <span class="aksi-teks">
+            <span class="aksi-judul">Lihat Bahan Paparan</span>
+            <span class="aksi-sub">Tautan akan diperbarui</span>
+          </span>
+          <span class="aksi-panah">↗</span>
+        </a>
+      </div>
+
+      <p class="catatan">Mohon mengisi daftar hadir sebelum rapat dimulai. Bahan paparan akan tersedia melalui tautan di atas setelah diperbarui oleh panitia.</p>
+    </div>
+  </main>
+
+</body>
+</html>
