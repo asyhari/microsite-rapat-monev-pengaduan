@@ -5,30 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rapat Monitoring dan Evaluasi Pengelolaan Pengaduan — OPD Kabupaten Belitung</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450;9..144,560;9..144,650;9..144,720&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy-950:#122238;
-    --navy-900:#173252;
-    --navy-800:#204064;
-    --navy-700:#2c527d;
-    --paper:#f6f3ec;
-    --paper-card:#fffdf8;
-    --gold:#b8863f;
-    --gold-light:#d9ad6c;
-    --ink:#1c2733;
-    --ink-soft:#4c5866;
-    --line: rgba(23,50,82,0.14);
+    --merah:#B3202D;
+    --merah-deep:#8C1620;
+    --merah-tint:#F4E2E1;
+    --putih:#FFFFFF;
+    --ink:#241110;
+    --ink-soft:#7A5C5A;
+    --line: rgba(140,22,32,0.16);
   }
 
   *{box-sizing:border-box;}
 
   body{
     margin:0;
-    background:var(--paper);
+    background:var(--merah-tint);
     background-image:
-      radial-gradient(circle at 12% 8%, rgba(184,134,63,0.08), transparent 40%),
-      radial-gradient(circle at 88% 92%, rgba(23,50,82,0.06), transparent 45%);
+      radial-gradient(circle at 10% 100%, rgba(179,32,45,0.10), transparent 45%),
+      radial-gradient(circle at 92% 0%, rgba(179,32,45,0.08), transparent 42%);
     color:var(--ink);
     font-family:'Public Sans', sans-serif;
     -webkit-font-smoothing:antialiased;
@@ -42,61 +38,85 @@
   .sheet{
     width:100%;
     max-width:640px;
-    background:var(--paper-card);
-    border:1px solid var(--line);
-    border-radius:2px;
-    box-shadow: 0 1px 2px rgba(23,50,82,0.04), 0 24px 48px -24px rgba(18,34,56,0.28);
+    background:var(--putih);
+    border-radius:3px;
+    box-shadow: 0 1px 2px rgba(140,22,32,0.08), 0 30px 60px -28px rgba(140,22,32,0.35);
     overflow:hidden;
     position:relative;
   }
 
-  .sheet::before{
-    content:"";
-    position:absolute;
-    top:0; left:0; right:0;
-    height:6px;
-    background:linear-gradient(90deg, var(--navy-900) 0%, var(--navy-900) 70%, var(--gold) 70%, var(--gold) 100%);
+  .pita{
+    height:10px;
+    display:flex;
   }
+  .pita span{ flex:1; }
+  .pita .m{ background:var(--merah); }
+  .pita .p{ background:var(--putih); border-bottom:1px solid var(--line); }
 
   .band{
-    padding:40px 48px 28px;
-    border-bottom:1px solid var(--line);
+    padding:42px 48px 26px;
   }
 
   .instansi{
+    display:flex;
+    align-items:center;
+    gap:12px;
     font-size:13px;
     letter-spacing:0.01em;
     color:var(--ink-soft);
-    margin:0 0 18px;
+    margin:0 0 20px;
+  }
+
+  .lambang{
+    width:30px;
+    height:30px;
+    flex-shrink:0;
+    object-fit:contain;
   }
 
   .instansi strong{
-    color:var(--navy-900);
+    color:var(--merah-deep);
     font-weight:600;
   }
 
+  .tahun{
+    margin-left:auto;
+    font-family:'Fraunces', serif;
+    font-weight:560;
+    font-size:13px;
+    color:var(--merah-deep);
+    white-space:nowrap;
+  }
+
   h1{
-    font-family:'Source Serif 4', serif;
-    font-weight:600;
+    font-family:'Fraunces', serif;
+    font-optical-sizing:auto;
+    font-weight:650;
     font-size:29px;
     line-height:1.32;
-    color:var(--navy-950);
+    color:var(--ink);
     margin:0;
     letter-spacing:-0.01em;
   }
 
+  .sub{
+    margin:12px 0 0;
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+
   .body{
-    padding:32px 48px 44px;
+    padding:30px 48px 0;
   }
 
   .jadwal{
     display:flex;
     gap:20px;
     padding:22px 24px;
-    background:var(--paper);
-    border:1px solid var(--line);
-    border-left:3px solid var(--gold);
-    border-radius:1px;
+    background:var(--merah-tint);
+    border-radius:2px;
+    border-left:3px solid var(--merah);
   }
 
   .jadwal-kolom{flex:1;}
@@ -108,10 +128,10 @@
   }
 
   .jadwal-nilai{
-    font-family:'Source Serif 4', serif;
+    font-family:'Fraunces', serif;
     font-size:18px;
     font-weight:600;
-    color:var(--navy-950);
+    color:var(--ink);
     margin:0;
   }
 
@@ -121,7 +141,7 @@
   }
 
   .tautan{
-    margin-top:32px;
+    margin-top:30px;
     display:flex;
     flex-direction:column;
     gap:12px;
@@ -138,48 +158,66 @@
     font-family:'Public Sans', sans-serif;
     font-size:15px;
     font-weight:600;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.15s ease;
   }
 
-  a.aksi:hover{
-    transform: translateY(-1px);
-  }
-
+  a.aksi:hover{ transform: translateY(-1px); }
   a.aksi:focus-visible{
-    outline:2px solid var(--navy-800);
+    outline:2px solid var(--merah-deep);
     outline-offset:3px;
   }
 
   .aksi-utama{
-    background:var(--navy-900);
-    color:#fdfbf6;
-    box-shadow: 0 10px 22px -12px rgba(23,50,82,0.55);
+    background:var(--merah);
+    color:var(--putih);
+    box-shadow: 0 10px 22px -12px rgba(140,22,32,0.5);
   }
-  .aksi-utama:hover{ background:var(--navy-800); }
+  .aksi-utama:hover{ background:var(--merah-deep); }
 
   .aksi-kedua{
     background:transparent;
-    color:var(--navy-900);
-    border:1px solid var(--navy-900);
+    color:var(--merah-deep);
+    border:1px solid var(--merah);
   }
-  .aksi-kedua:hover{ background:rgba(23,50,82,0.05); }
+  .aksi-kedua:hover{ background:var(--merah-tint); }
 
   .aksi-teks{ display:flex; flex-direction:column; gap:2px; }
   .aksi-judul{ font-size:15px; }
-  .aksi-sub{ font-size:12.5px; font-weight:500; opacity:0.75; }
-
-  .aksi-panah{
-    font-size:17px;
-    flex-shrink:0;
-  }
+  .aksi-sub{ font-size:12.5px; font-weight:500; opacity:0.8; }
+  .aksi-panah{ font-size:17px; flex-shrink:0; }
 
   .catatan{
-    margin-top:28px;
+    margin-top:26px;
     font-size:12.5px;
     line-height:1.6;
     color:var(--ink-soft);
     border-top:1px solid var(--line);
     padding-top:20px;
+    padding-bottom:6px;
+  }
+
+  .pesisir{
+    height:96px;
+    position:relative;
+    margin-top:8px;
+    overflow:hidden;
+  }
+  .pesisir svg{
+    position:absolute;
+    bottom:0; left:0;
+    width:100%;
+    height:100%;
+    display:block;
+  }
+
+  .jejak{
+    text-align:center;
+    font-size:11px;
+    color: rgba(255,255,255,0.82);
+    padding:9px 0 12px;
+    background:var(--merah-deep);
+    letter-spacing:0.02em;
+    margin:0;
   }
 
   @media (max-width:520px){
@@ -187,6 +225,7 @@
     h1{ font-size:23px; }
     .jadwal{ flex-direction:column; gap:14px; }
     .jadwal-pemisah{ display:none; }
+    .tahun{ display:none; }
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -197,9 +236,18 @@
 <body>
 
   <main class="sheet">
+    <div class="pita">
+      <span class="m"></span><span class="p"></span>
+    </div>
+
     <div class="band">
-      <p class="instansi"><strong>Pemerintah Kabupaten Belitung</strong> — Undangan Rapat</p>
+      <p class="instansi">
+        <img class="lambang" src="https://upload.wikimedia.org/wikipedia/commons/4/49/Logo_Belitung.png" alt="Logo Kabupaten Belitung">
+        <span><strong>Pemerintah Kabupaten Belitung</strong> · Undangan Rapat</span>
+        <span class="tahun">HUT RI 81</span>
+      </p>
       <h1>Rapat Monitoring dan Evaluasi Pengelolaan Pengaduan di Lingkup OPD Kabupaten Belitung</h1>
+      <p class="sub">Bersama merawat pelayanan publik yang responsif — dari Bumi Laskar Pelangi untuk Belitung yang lebih baik.</p>
     </div>
 
     <div class="body">
@@ -235,6 +283,22 @@
 
       <p class="catatan">Mohon mengisi daftar hadir sebelum rapat dimulai. Bahan paparan akan tersedia melalui tautan di atas setelah diperbarui oleh panitia.</p>
     </div>
+
+    <div class="pesisir">
+      <svg viewBox="0 0 640 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="0" y="0" width="640" height="96" fill="#B3202D"/>
+        <path d="M0 34 Q 60 24 120 34 T 240 34 T 360 34 T 480 34 T 600 34 T 640 34 V96 H0 Z" fill="#8C1620" opacity="0.7"/>
+        <path d="M0 52 Q 80 40 160 52 T 320 52 T 480 52 T 640 52 V96 H0 Z" fill="#FFFFFF"/>
+        <ellipse cx="90" cy="76" rx="46" ry="24" fill="#F4E2E1"/>
+        <ellipse cx="65" cy="63" rx="24" ry="17" fill="#FFFFFF"/>
+        <ellipse cx="150" cy="82" rx="30" ry="14" fill="#F4E2E1"/>
+        <ellipse cx="470" cy="78" rx="52" ry="25" fill="#F4E2E1"/>
+        <ellipse cx="500" cy="61" rx="26" ry="18" fill="#FFFFFF"/>
+        <ellipse cx="560" cy="84" rx="34" ry="15" fill="#F4E2E1"/>
+        <ellipse cx="300" cy="88" rx="22" ry="9" fill="#F4E2E1" opacity="0.9"/>
+      </svg>
+    </div>
+    <p class="jejak">Kabupaten Belitung — Negeri Laskar Pelangi</p>
   </main>
 
 </body>
