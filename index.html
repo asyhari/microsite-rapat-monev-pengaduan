@@ -1,305 +1,1025 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rapat Monitoring dan Evaluasi Pengelolaan Pengaduan — OPD Kabupaten Belitung</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450;9..144,560;9..144,650;9..144,720&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --merah:#B3202D;
-    --merah-deep:#8C1620;
-    --merah-tint:#F4E2E1;
-    --putih:#FFFFFF;
-    --ink:#241110;
-    --ink-soft:#7A5C5A;
-    --line: rgba(140,22,32,0.16);
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Undangan Rapat Monitoring dan Evaluasi Pengelolaan Pengaduan di Lingkup OPD Kabupaten Belitung — Diskominfo Kabupaten Belitung.">
+  <meta name="theme-color" content="#8C1620">
+  <title>Rapat Monev Pengaduan OPD — Kabupaten Belitung</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --merah-utama: #A31D24;
+      --merah-deep: #700B10;
+      --merah-tint: #FDF4F4;
+      --merah-soft: #F9E8E8;
+      --emas-aksen: #D4AF37;
+      --emas-tint: #FFF9E6;
+      --putih: #FFFFFF;
+      --ink: #1C1314;
+      --ink-soft: #635052;
+      --ink-muted: #8A7375;
+      --line: rgba(163, 29, 36, 0.12);
+      --line-strong: rgba(163, 29, 36, 0.25);
+      --shadow-sm: 0 4px 12px rgba(112, 11, 16, 0.05);
+      --shadow-md: 0 12px 32px rgba(112, 11, 16, 0.12);
+      --shadow-lg: 0 24px 50px -12px rgba(112, 11, 16, 0.22);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+    }
 
-  *{box-sizing:border-box;}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  body{
-    margin:0;
-    background:var(--merah-tint);
-    background-image:
-      radial-gradient(circle at 10% 100%, rgba(179,32,45,0.10), transparent 45%),
-      radial-gradient(circle at 92% 0%, rgba(179,32,45,0.08), transparent 42%);
-    color:var(--ink);
-    font-family:'Public Sans', sans-serif;
-    -webkit-font-smoothing:antialiased;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:48px 20px;
-  }
+    body {
+      background: #F8F1F1;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(163, 29, 36, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(212, 175, 55, 0.1) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(253, 244, 244, 0.8) 0%, transparent 100%);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
+      position: relative;
+      overflow-x: hidden;
+    }
 
-  .sheet{
-    width:100%;
-    max-width:640px;
-    background:var(--putih);
-    border-radius:3px;
-    box-shadow: 0 1px 2px rgba(140,22,32,0.08), 0 30px 60px -28px rgba(140,22,32,0.35);
-    overflow:hidden;
-    position:relative;
-  }
+    /* Ambient Background Glow Particles */
+    .bg-glow-1 {
+      position: fixed;
+      top: -100px;
+      left: -100px;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(163,29,36,0.18) 0%, transparent 70%);
+      filter: blur(50px);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .bg-glow-2 {
+      position: fixed;
+      bottom: -80px;
+      right: -80px;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, transparent 70%);
+      filter: blur(60px);
+      z-index: 0;
+      pointer-events: none;
+    }
 
-  .pita{
-    height:10px;
-    display:flex;
-  }
-  .pita span{ flex:1; }
-  .pita .m{ background:var(--merah); }
-  .pita .p{ background:var(--putih); border-bottom:1px solid var(--line); }
+    /* Main Container Card */
+    .card-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 680px;
+      background: var(--putih);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-  .band{
-    padding:42px 48px 26px;
-  }
+    /* Top Red & White Flag Ribbon Accent */
+    .flag-ribbon {
+      height: 8px;
+      width: 100%;
+      display: flex;
+    }
+    .flag-ribbon .red {
+      flex: 1;
+      background: linear-gradient(90deg, #A31D24, #C92A32);
+    }
+    .flag-ribbon .white {
+      flex: 1;
+      background: #FFFFFF;
+      box-shadow: inset 0 -1px 0 rgba(0,0,0,0.06);
+    }
+    .flag-ribbon .gold {
+      width: 40px;
+      background: linear-gradient(90deg, #D4AF37, #F3E5AB);
+    }
 
-  .instansi{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    font-size:13px;
-    letter-spacing:0.01em;
-    color:var(--ink-soft);
-    margin:0 0 20px;
-  }
+    /* Card Header Section */
+    .header-section {
+      padding: 36px 40px 24px;
+      background: linear-gradient(180deg, #FFFDFD 0%, #FFFFFF 100%);
+      position: relative;
+    }
 
-  .lambang{
-    width:30px;
-    height:30px;
-    flex-shrink:0;
-    object-fit:contain;
-  }
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
 
-  .instansi strong{
-    color:var(--merah-deep);
-    font-weight:600;
-  }
+    .instansi-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
 
-  .tahun{
-    margin-left:auto;
-    font-family:'Fraunces', serif;
-    font-weight:560;
-    font-size:13px;
-    color:var(--merah-deep);
-    white-space:nowrap;
-  }
+    .logo-pemkab {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .logo-pemkab:hover {
+      transform: scale(1.08) rotate(-3deg);
+    }
 
-  h1{
-    font-family:'Fraunces', serif;
-    font-optical-sizing:auto;
-    font-weight:650;
-    font-size:29px;
-    line-height:1.32;
-    color:var(--ink);
-    margin:0;
-    letter-spacing:-0.01em;
-  }
+    .brand-meta {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--merah-deep);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .brand-sub {
+      font-size: 12px;
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
 
-  .sub{
-    margin:12px 0 0;
-    font-size:14px;
-    color:var(--ink-soft);
-    line-height:1.6;
-  }
+    /* Status Live Badge */
+    .badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      background: var(--merah-tint);
+      border: 1px solid var(--line-strong);
+      border-radius: 50px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--merah-utama);
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--merah-utama);
+      border-radius: 50%;
+      position: relative;
+    }
+    .pulse-dot::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      border: 2px solid var(--merah-utama);
+      border-radius: 50%;
+      animation: pulse 1.8s infinite ease-out;
+    }
 
-  .body{
-    padding:30px 48px 0;
-  }
+    @keyframes pulse {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
 
-  .jadwal{
-    display:flex;
-    gap:20px;
-    padding:22px 24px;
-    background:var(--merah-tint);
-    border-radius:2px;
-    border-left:3px solid var(--merah);
-  }
+    .main-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 27px;
+      font-weight: 800;
+      line-height: 1.3;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
 
-  .jadwal-kolom{flex:1;}
+    .main-subtitle {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+      font-weight: 400;
+    }
 
-  .jadwal-label{
-    font-size:11.5px;
-    color:var(--ink-soft);
-    margin:0 0 6px;
-  }
+    .organizer-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      padding: 4px 10px;
+      background: rgba(212, 175, 55, 0.12);
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #8C6A00;
+    }
 
-  .jadwal-nilai{
-    font-family:'Fraunces', serif;
-    font-size:18px;
-    font-weight:600;
-    color:var(--ink);
-    margin:0;
-  }
+    /* Body Section */
+    .body-section {
+      padding: 0 40px 36px;
+    }
 
-  .jadwal-pemisah{
-    width:1px;
-    background:var(--line);
-  }
+    /* Live Countdown Box */
+    .countdown-card {
+      background: linear-gradient(135deg, #E52B36 0%, #B81B24 100%);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      color: var(--putih);
+      box-shadow: 0 10px 28px -4px rgba(229, 43, 54, 0.35);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
 
-  .tautan{
-    margin-top:30px;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-  }
+    .countdown-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
 
-  a.aksi{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-    padding:17px 22px;
-    text-decoration:none;
-    border-radius:2px;
-    font-family:'Public Sans', sans-serif;
-    font-size:15px;
-    font-weight:600;
-    transition: transform 0.15s ease;
-  }
+    .countdown-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
 
-  a.aksi:hover{ transform: translateY(-1px); }
-  a.aksi:focus-visible{
-    outline:2px solid var(--merah-deep);
-    outline-offset:3px;
-  }
+    .countdown-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+      color: #FFFFFF;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
 
-  .aksi-utama{
-    background:var(--merah);
-    color:var(--putih);
-    box-shadow: 0 10px 22px -12px rgba(140,22,32,0.5);
-  }
-  .aksi-utama:hover{ background:var(--merah-deep); }
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
 
-  .aksi-kedua{
-    background:transparent;
-    color:var(--merah-deep);
-    border:1px solid var(--merah);
-  }
-  .aksi-kedua:hover{ background:var(--merah-tint); }
+    .timer-unit {
+      background: #FFFFFF;
+      border-radius: var(--radius-sm);
+      padding: 12px 8px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
 
-  .aksi-teks{ display:flex; flex-direction:column; gap:2px; }
-  .aksi-judul{ font-size:15px; }
-  .aksi-sub{ font-size:12.5px; font-weight:500; opacity:0.8; }
-  .aksi-panah{ font-size:17px; flex-shrink:0; }
+    .timer-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1;
+      color: #C91A24;
+    }
 
-  .catatan{
-    margin-top:26px;
-    font-size:12.5px;
-    line-height:1.6;
-    color:var(--ink-soft);
-    border-top:1px solid var(--line);
-    padding-top:20px;
-    padding-bottom:6px;
-  }
+    .timer-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #700B10;
+      margin-top: 6px;
+      font-weight: 700;
+    }
 
-  .pesisir{
-    height:96px;
-    position:relative;
-    margin-top:8px;
-    overflow:hidden;
-  }
-  .pesisir svg{
-    position:absolute;
-    bottom:0; left:0;
-    width:100%;
-    height:100%;
-    display:block;
-  }
+    /* Info Grid (Jadwal & Lokasi) */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
 
-  .jejak{
-    text-align:center;
-    font-size:11px;
-    color: rgba(255,255,255,0.82);
-    padding:9px 0 12px;
-    background:var(--merah-deep);
-    letter-spacing:0.02em;
-    margin:0;
-  }
+    .info-card {
+      background: var(--merah-tint);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
 
-  @media (max-width:520px){
-    .band, .body{ padding-left:26px; padding-right:26px; }
-    h1{ font-size:23px; }
-    .jadwal{ flex-direction:column; gap:14px; }
-    .jadwal-pemisah{ display:none; }
-    .tahun{ display:none; }
-  }
+    .info-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--line-strong);
+    }
 
-  @media (prefers-reduced-motion: reduce){
-    a.aksi{ transition:none; }
-  }
-</style>
+    .info-icon-wrapper {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--putih);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--line);
+    }
+
+    .info-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--merah-utama);
+      margin-bottom: 4px;
+    }
+
+    .info-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    .info-subvalue {
+      font-size: 12.5px;
+      color: var(--ink-soft);
+      margin-top: 2px;
+      font-weight: 500;
+    }
+
+    /* Action Links & Buttons */
+    .action-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .btn-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #E52B36 0%, #C91A24 100%);
+      color: #FFFFFF;
+      box-shadow: 0 8px 22px -4px rgba(229, 43, 54, 0.45);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -4px rgba(229, 43, 54, 0.6);
+      background: linear-gradient(135deg, #F03843 0%, #D9232D 100%);
+    }
+
+    .btn-zoom {
+      background: linear-gradient(135deg, #0B5CFF 0%, #0046C7 100%);
+      color: #FFFFFF;
+      box-shadow: 0 8px 22px -4px rgba(11, 92, 255, 0.45);
+    }
+    .btn-zoom:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -4px rgba(11, 92, 255, 0.6);
+      background: linear-gradient(135deg, #1A69FF 0%, #0B5CFF 100%);
+    }
+
+    .btn-secondary {
+      background: var(--putih);
+      color: var(--merah-deep);
+      border: 1.5px solid var(--merah-utama);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-secondary:hover {
+      background: var(--merah-tint);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-text-container {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      text-align: left;
+    }
+
+    .btn-main-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .btn-sub-text {
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    .btn-icon-arrow {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .btn-primary:hover .btn-icon-arrow {
+      transform: translateX(4px);
+    }
+    .btn-secondary .btn-icon-arrow {
+      background: var(--merah-tint);
+      color: var(--merah-utama);
+    }
+    .btn-secondary:hover .btn-icon-arrow {
+      transform: translateX(4px);
+    }
+
+    /* Secondary Tools Bar (Add to Calendar & Share) */
+    .tool-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .btn-tool {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: var(--putih);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-soft);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-tool:hover {
+      background: var(--merah-tint);
+      color: var(--merah-deep);
+      border-color: var(--merah-utama);
+    }
+
+    /* Rundown Accordion Section */
+    .rundown-box {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: #FFFAFA;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .rundown-header {
+      padding: 16px 20px;
+      background: var(--merah-tint);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .rundown-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--merah-deep);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .rundown-toggle-icon {
+      font-size: 14px;
+      color: var(--merah-utama);
+      transition: transform 0.3s ease;
+    }
+
+    .rundown-body {
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .timeline-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 70px;
+      top: 26px;
+      bottom: -14px;
+      width: 2px;
+      background: var(--line);
+    }
+
+    .timeline-time {
+      width: 60px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--merah-utama);
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    .timeline-badge {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--merah-utama);
+      border: 2px solid var(--putih);
+      box-shadow: 0 0 0 2px var(--merah-tint);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .timeline-desc {
+      font-size: 13px;
+      color: var(--ink);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .timeline-subdesc {
+      font-size: 12px;
+      color: var(--ink-soft);
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    /* Note Box */
+    .note-card {
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      background: rgba(212, 175, 55, 0.08);
+      border-left: 3px solid var(--emas-aksen);
+      padding: 14px 18px;
+      border-radius: 4px var(--radius-sm) var(--radius-sm) 4px;
+    }
+
+    .note-card strong {
+      color: #8C6A00;
+    }
+
+    /* Footer Section with Coastal Waves */
+    .coastal-footer {
+      position: relative;
+      background: linear-gradient(180deg, var(--merah-utama) 0%, var(--merah-deep) 100%);
+      color: var(--putih);
+      padding-top: 40px;
+      overflow: hidden;
+    }
+
+    .waves-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 45px;
+      display: block;
+    }
+
+    .footer-content {
+      position: relative;
+      z-index: 2;
+      padding: 16px 24px 20px;
+      text-align: center;
+    }
+
+    .footer-motto {
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 4px;
+    }
+
+    .footer-sub {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 0.02em;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #1C1314;
+      color: #FFF;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 580px) {
+      body {
+        padding: 16px 10px;
+      }
+
+      .header-section {
+        padding: 28px 24px 20px;
+      }
+
+      .body-section {
+        padding: 0 24px 28px;
+      }
+
+      .main-title {
+        font-size: 22px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .countdown-grid {
+        gap: 8px;
+      }
+
+      .timer-number {
+        font-size: 22px;
+      }
+
+      .tool-bar {
+        grid-template-columns: 1fr;
+      }
+
+      .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .badge-live {
+        align-self: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <main class="sheet">
-    <div class="pita">
-      <span class="m"></span><span class="p"></span>
+  <!-- Ambient Glow Backgrounds -->
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+
+  <!-- Main Card Container -->
+  <main class="card-container">
+
+    <!-- Top Indonesian Flag Ribbon Accent -->
+    <div class="flag-ribbon">
+      <div class="red"></div>
+      <div class="white"></div>
+      <div class="gold"></div>
     </div>
 
-    <div class="band">
-      <p class="instansi">
-        <img class="lambang" src="https://upload.wikimedia.org/wikipedia/commons/4/49/Logo_Belitung.png" alt="Logo Kabupaten Belitung">
-        <span><strong>Pemerintah Kabupaten Belitung</strong> · Undangan Rapat</span>
-        <span class="tahun">HUT RI 81</span>
+    <!-- Header Section -->
+    <header class="header-section">
+      <div class="header-top">
+        <div class="instansi-brand">
+          <img class="logo-pemkab" src="https://upload.wikimedia.org/wikipedia/commons/4/49/Logo_Belitung.png" alt="Logo Kabupaten Belitung">
+          <div class="brand-meta">
+            <span class="brand-title">Pemerintah Kabupaten Belitung</span>
+            <span class="brand-sub">Dinas Komunikasi dan Informatika</span>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="main-title">Rapat Monitoring dan Evaluasi Pengelolaan Pengaduan di Lingkup OPD</h1>
+      
+      <p class="main-subtitle">
+        Bersama mewujudkan pelayanan publik yang responsif, transparan, dan akuntabel demi kemajuan masyarakat Kabupaten Belitung.
       </p>
-      <h1>Rapat Monitoring dan Evaluasi Pengelolaan Pengaduan di Lingkup OPD Kabupaten Belitung</h1>
-      <p class="sub">Bersama merawat pelayanan publik yang responsif — dari Bumi Laskar Pelangi untuk Belitung yang lebih baik.</p>
-    </div>
 
-    <div class="body">
-      <div class="jadwal">
-        <div class="jadwal-kolom">
-          <p class="jadwal-label">Tanggal</p>
-          <p class="jadwal-nilai">09 September 2026</p>
-        </div>
-        <div class="jadwal-pemisah"></div>
-        <div class="jadwal-kolom">
-          <p class="jadwal-label">Waktu</p>
-          <p class="jadwal-nilai">14.00 – 16.00 WIB</p>
-        </div>
+      <div class="organizer-tag">
+        Besadu & SP4N-LAPOR!
       </div>
+    </header>
 
-      <div class="tautan">
-        <a class="aksi aksi-utama" href="https://sirapat.belitung.go.id/rapat/daftarhadir/Jm0R0ybgxe" target="_blank" rel="noopener">
-          <span class="aksi-teks">
-            <span class="aksi-judul">Isi Daftar Hadir</span>
-            <span class="aksi-sub">sirapat.belitung.go.id</span>
-          </span>
-          <span class="aksi-panah">↗</span>
+    <!-- Body Section -->
+    <div class="body-section">
+
+      <!-- Live Countdown Card -->
+      <section class="countdown-card">
+        <div class="countdown-header">
+          <span class="countdown-title">⏱️ Hitung Mundur Menuju Rapat</span>
+          <span style="font-size: 11px; opacity: 0.8; font-weight: 600;">WIB (UTC+7)</span>
+        </div>
+        <div class="countdown-grid">
+          <div class="timer-unit">
+            <div class="timer-number" id="days">--</div>
+            <div class="timer-label">Hari</div>
+          </div>
+          <div class="timer-unit">
+            <div class="timer-number" id="hours">--</div>
+            <div class="timer-label">Jam</div>
+          </div>
+          <div class="timer-unit">
+            <div class="timer-number" id="minutes">--</div>
+            <div class="timer-label">Menit</div>
+          </div>
+          <div class="timer-unit">
+            <div class="timer-number" id="seconds">--</div>
+            <div class="timer-label">Detik</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Info Grid (Tanggal & Lokasi) -->
+      <section class="info-grid">
+        <div class="info-card">
+          <div class="info-icon-wrapper">📅</div>
+          <div class="info-content">
+            <span class="info-label">Waktu Pelaksanaan</span>
+            <span class="info-value">09 September 2026</span>
+            <span class="info-subvalue">14.00 – 16.00 WIB</span>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon-wrapper">📍</div>
+          <div class="info-content">
+            <span class="info-label">Format Rapat</span>
+            <span class="info-value">Hybrid / Virtual</span>
+            <span class="info-subvalue">Diskominfo & SiRapat</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Action Buttons -->
+      <section class="action-group">
+        <a class="btn-action btn-zoom" href="https://us06web.zoom.us/j/89746966159?pwd=rd8GIQo2Tl9YBwHjzeAz4QOSGcWvaD.1" target="_blank" rel="noopener">
+          <div class="btn-text-container">
+            <span class="btn-main-text">Gabung Ruang Zoom Meeting</span>
+            <span class="btn-sub-text">Meeting ID: 897 4696 6159 (Klik untuk Masuk)</span>
+          </div>
+          <div class="btn-icon-arrow">🎥</div>
         </a>
 
-        <a class="aksi aksi-kedua" href="https://sirapat.belitung.go.id/rapat/paparan/DUMMY-PAPARAN" target="_blank" rel="noopener">
-          <span class="aksi-teks">
-            <span class="aksi-judul">Lihat Bahan Paparan</span>
-            <span class="aksi-sub">Tautan akan diperbarui</span>
-          </span>
-          <span class="aksi-panah">↗</span>
+        <a class="btn-action btn-primary" href="https://sirapat.belitung.go.id/rapat/daftarhadir/Jm0R0ybgxe" target="_blank" rel="noopener">
+          <div class="btn-text-container">
+            <span class="btn-main-text">Isi Daftar Hadir Presensi</span>
+            <span class="btn-sub-text">sirapat.belitung.go.id/rapat/daftarhadir</span>
+          </div>
+          <div class="btn-icon-arrow">↗</div>
         </a>
+
+        <a class="btn-action btn-secondary" href="https://sirapat.belitung.go.id/rapat/paparan/DUMMY-PAPARAN" target="_blank" rel="noopener">
+          <div class="btn-text-container">
+            <span class="btn-main-text">Lihat Bahan Paparan Rapat</span>
+            <span class="btn-sub-text">Materi & Evaluasi Pengaduan OPD</span>
+          </div>
+          <div class="btn-icon-arrow">📄</div>
+        </a>
+      </section>
+
+      <!-- Secondary Utility Bar -->
+      <section class="tool-bar">
+        <button class="btn-tool" onclick="addToGoogleCalendar()">
+          <span>📅</span> Add to Google Calendar
+        </button>
+        <button class="btn-tool" onclick="copyInvitationLink()">
+          <span>🔗</span> Salin Tautan Undangan
+        </button>
+      </section>
+
+      <!-- Rundown Accordion -->
+      <section class="rundown-box">
+        <div class="rundown-header" onclick="toggleRundown()">
+          <span class="rundown-title">
+            <span>📋</span> Susunan Acara (Rundown Rapat)
+          </span>
+          <span class="rundown-toggle-icon" id="rundown-arrow">▼</span>
+        </div>
+        <div class="rundown-body" id="rundown-content">
+          <div class="timeline-item">
+            <div class="timeline-time">13.30</div>
+            <div class="timeline-badge"></div>
+            <div>
+              <div class="timeline-desc">Registrasi & Presensi Online</div>
+              <div class="timeline-subdesc">Pengisian daftar hadir via portal SiRapat</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">14.00</div>
+            <div class="timeline-badge"></div>
+            <div>
+              <div class="timeline-desc">Pembukaan & Arahan Kepala Dinas</div>
+              <div class="timeline-subdesc">Sambutan Dinas Komunikasi dan Informatika Kabupaten Belitung</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">14.15</div>
+            <div class="timeline-badge"></div>
+            <div>
+              <div class="timeline-desc">Paparan Evaluasi Pengaduan OPD</div>
+              <div class="timeline-subdesc">Review pengelolaan SP4N-LAPOR! & respon tindak lanjut pengaduan</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">15.15</div>
+            <div class="timeline-badge"></div>
+            <div>
+              <div class="timeline-desc">Sesi Diskusi & Rencana Aksi</div>
+              <div class="timeline-subdesc">Tanya jawab antar pejabat pengelola pengaduan OPD</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">15.55</div>
+            <div class="timeline-badge"></div>
+            <div>
+              <div class="timeline-desc">Rekomendasi & Penutup</div>
+              <div class="timeline-subdesc">Penetapan poin kesepakatan monev</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Note Box -->
+      <div class="note-card">
+        <strong>📌 Catatan Penting:</strong> Mohon bapak/ibu perwakilan OPD dapat mengisi presensi kehadiran sebelum rapat berlangsung. Bahan paparan dapat diakses secara berkala melalui tautan di atas.
       </div>
 
-      <p class="catatan">Mohon mengisi daftar hadir sebelum rapat dimulai. Bahan paparan akan tersedia melalui tautan di atas setelah diperbarui oleh panitia.</p>
     </div>
 
-    <div class="pesisir">
-      <svg viewBox="0 0 640 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="0" y="0" width="640" height="96" fill="#B3202D"/>
-        <path d="M0 34 Q 60 24 120 34 T 240 34 T 360 34 T 480 34 T 600 34 T 640 34 V96 H0 Z" fill="#8C1620" opacity="0.7"/>
-        <path d="M0 52 Q 80 40 160 52 T 320 52 T 480 52 T 640 52 V96 H0 Z" fill="#FFFFFF"/>
-        <ellipse cx="90" cy="76" rx="46" ry="24" fill="#F4E2E1"/>
-        <ellipse cx="65" cy="63" rx="24" ry="17" fill="#FFFFFF"/>
-        <ellipse cx="150" cy="82" rx="30" ry="14" fill="#F4E2E1"/>
-        <ellipse cx="470" cy="78" rx="52" ry="25" fill="#F4E2E1"/>
-        <ellipse cx="500" cy="61" rx="26" ry="18" fill="#FFFFFF"/>
-        <ellipse cx="560" cy="84" rx="34" ry="15" fill="#F4E2E1"/>
-        <ellipse cx="300" cy="88" rx="22" ry="9" fill="#F4E2E1" opacity="0.9"/>
+    <!-- Footer Coastal Wave Animation -->
+    <footer class="coastal-footer">
+      <svg class="waves-svg" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,32L48,42.7C96,53,192,75,288,80C384,85,480,75,576,64C672,53,768,43,864,48C960,53,1056,75,1152,80C1248,85,1344,75,1392,70L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z" fill="#FFFFFF" opacity="0.95"></path>
+        <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z" fill="#FDF4F4" opacity="0.4"></path>
       </svg>
-    </div>
-    <p class="jejak">Kabupaten Belitung — Negeri Laskar Pelangi</p>
+      <div class="footer-content">
+        <p class="footer-motto">Kabupaten Belitung — Negeri Laskar Pelangi</p>
+        <p class="footer-sub">© 2026 Diskominfo Kabupaten Belitung. Seluruh Hak Cipta Dilindungi.</p>
+      </div>
+    </footer>
+
   </main>
 
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast">
+    <span>✅</span> <span id="toast-message">Tautan undangan berhasil disalin!</span>
+  </div>
+
+  <!-- JavaScript Interaktivitas -->
+  <script>
+    // Target Meeting Date: 09 September 2026 14:00:00 WIB (UTC+7)
+    const targetDate = new Date('2026-09-01T14:00:00+07:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById('days').innerText = String(days).padStart(2, '0');
+        document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+        document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+      } else {
+        document.getElementById('days').innerText = '00';
+        document.getElementById('hours').innerText = '00';
+        document.getElementById('minutes').innerText = '00';
+        document.getElementById('seconds').innerText = '00';
+      }
+    }
+
+    // Initial call & interval timer
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Toggle Rundown Accordion
+    function toggleRundown() {
+      const content = document.getElementById('rundown-content');
+      const arrow = document.getElementById('rundown-arrow');
+      if (content.style.display === 'none') {
+        content.style.display = 'flex';
+        arrow.style.transform = 'rotate(0deg)';
+      } else {
+        content.style.display = 'none';
+        arrow.style.transform = 'rotate(-90deg)';
+      }
+    }
+
+    // Toast Notification helper
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // Copy Link function
+    function copyInvitationLink() {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        showToast('Tautan undangan berhasil disalin!');
+      }).catch(() => {
+        showToast('Tautan: ' + url);
+      });
+    }
+
+    // Google Calendar Event Generator
+    function addToGoogleCalendar() {
+      const title = encodeURIComponent("Rapat Monev Pengelolaan Pengaduan OPD Kabupaten Belitung");
+      const details = encodeURIComponent("Rapat Monitoring dan Evaluasi Pengelolaan Pengaduan di Lingkup OPD Kabupaten Belitung oleh Diskominfo Belitung.\nZoom Meeting: https://us06web.zoom.us/j/89746966159?pwd=rd8GIQo2Tl9YBwHjzeAz4QOSGcWvaD.1\nPresensi: https://sirapat.belitung.go.id/rapat/daftarhadir/Jm0R0ybgxe");
+      const location = encodeURIComponent("https://us06web.zoom.us/j/89746966159?pwd=rd8GIQo2Tl9YBwHjzeAz4QOSGcWvaD.1");
+      // 09 Sept 2026 14:00 - 16:00 WIB = 07:00 - 09:00 UTC
+      const dates = "20260909T070000Z/20260909T090000Z";
+      const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
+      window.open(gcalUrl, '_blank');
+    }
+  </script>
 </body>
 </html>
